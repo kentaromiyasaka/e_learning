@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Name: 
+  Email: 
+  lesso_id: 
+  password: 
+  picture: 
+  is_admin: false
+
+two:
+  Name: 
+  Email: 
+  lesso_id: 
+  password: 
+  picture: 
+  is_admin: false
