@@ -1,0 +1,32 @@
+<%= form_for(@user) do |f| %>
+
+<%= render "shared/error_message", object:f.object %>
+<%# エラーメッセージ %>
+<div class="form-group">
+<%# form-groupに変えている %>
+    <%= f.label :Name %><br>
+    <%= f.text_field :name,class:"form-control"%>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :email %><br>
+    <%= f.email_field :email,class:"form-control" %>
+    <%# 上記２つのemailは、labelをクリックしたらテキストボックスが光るというコネクションを示している %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :password %><br>
+    <%= f.password_field :password,class:"form-control"%>
+
+    <div class="form-group">
+    <%= f.label :"password_confirmation" %><br>
+    <%= f.password_field :"password_confirmation",class:"form-control"%>
+    </div>
+  
+    </div>
+
+    <div>
+        <%= f.submit btn_msg, class: 'btn btn-primary btn-block'%>
+        <%# btn_msgはただの変数なので変更可能 => renderに続く%>
+    </div>
+<% end %>

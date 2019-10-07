@@ -1,0 +1,68 @@
+<div class="container">
+  <header class="navbar navbar-fixed-top navbar-dar" style="background-color: #50aba9;">
+    <div class="container">
+      <a id="logo" href="/">Band app</a>
+      <nav>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a class="menu" href="/">
+          <i class="fa fa-home fa-lg"></i> Home
+</a> </li>
+          <li>
+            <a class="menu" href="/posts/new">
+            <i class="fa fa-comment fa-lg"></i> Post
+</a> </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle menu" data-toggle="dropdown">
+              <i class="fa fa-bars fa-lg fa-icon"></i>Menu<b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="menu" href="/users">
+                <i class="fa fa-users fa-lg"></i> Users
+</a> </li>
+              <li>
+                <a class="menu" href="/users/104">
+                <i class="fa fa-file fa-lg"></i> Profile
+</a> </li>
+              <li>
+                <a class="menu" href="/users/104/edit">
+                <i class="fa fa-edit fa-lg"></i> User-edit
+</a> </li>
+              <li class="divider"></li>
+              <li>
+                <a class="menu" rel="nofollow" data-method="delete" href="/logout">
+                <i class="fa fa-door-open fa-lg"></i> Log out
+</a> </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div id="myCarousel" class="carousel slide">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+      <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+    </ol>
+    <!-- Carousel items -->
+    <div class="carousel-inner photo">
+      <div class="item active"><%= image_tag 'knowledge.jpg', class:"image" %></div>
+      <div class="item"><img class="image" src="http://placehold.jp/3d4070/fff>fff/5184x3456.png?text=image2" alt="Band2"></div>
+      <div class="item"><img class="image" src="http://placehold.jp/3d4070/ffffff/2500x1875.png?text=image3" alt="Band3"></div>
+    </div>
+    <!-- Carousel nav -->
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>
+  </div>
+
+  <div class="center jumbotron">
+    <h1>Welcome to Band App</h1>
+    <hr class="my-4">
+    <p>メンバーを募集して理想のバンドを組もう！！</p>
+  </div>
+
+  *投稿部分省略
+
+</div>
