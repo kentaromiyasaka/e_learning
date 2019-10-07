@@ -1,33 +1,29 @@
 <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4 text-right">Let's study about Nursing</h1>
+    <div class="container">
+        <h1 class="display-4 text-right">Let's study about Nursing</h1>
         <div class="text-right p-3">
-            <p class="lead d-inline-block ">Make your own flash cards</p>
-            <button type="button" class="btn btn-primary btn-lg d-inline-block mx-2">Start Studying</button>
+        <p class="lead d-inline-block ">Make your own flash cards</p>
+        <button type="button" class="btn btn-primary btn-lg d-inline-block mx-2">Start Studying</button>
         </div>
-   
-  </div><!-- /.container -->
+
+    </div><!-- /.container -->
 </div><!-- /.jumbotron -->
 
 <%# ここから画像スライド %>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <%# <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> %>
-    </ol>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators"></ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-        <div class="item"><%= image_tag 'knowledge.jpg', class:"image"%></div>
-        <h1 class="words">It can be your refarence</h1>
+            <div class="item"><%= image_tag 'knowledge.jpg', class:"image"%></div>
+            <h1 class="words">It can be your refarence</h1>
         </div>
         <div class="carousel-item">
-         <div class="item"><%= image_tag 'tr-ng-th-m-m-ana-anabeautyacademy-N1hQ-rLyJHI-unsplash.jpg', class:"image"%></div>
-         <h1 class="words1">Use it for your exam</h1>
+            <div class="item"><%= image_tag 'tr-ng-th-m-m-ana-anabeautyacademy-N1hQ-rLyJHI-unsplash.jpg', class:"image"%></div>
+            <h1 class="words1">Use it for your exam</h1>
         </div>
         <div class="carousel-item">
-         <div class="item"><%= image_tag 'study_together.jpg', class:"image" %></div>
-         <h1 class="words">You can use this with your friends</h1>
+            <div class="item"><%= image_tag 'study_together.jpg', class:"image" %></div>
+            <h1 class="words">You can use this with your friends</h1>
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -38,5 +34,5 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
-    </div>
+</div>
 <%# ここまで画像スライド %>
