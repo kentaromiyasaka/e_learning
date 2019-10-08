@@ -1,4 +1,6 @@
 <%= form_for(@user) do |f| %>
+
+    <%= render "shared/error_message", object:f.object %>
     <%# エラーメッセージ %>
     <div class="form-group">
         <%# form-groupに変えている %>
@@ -18,8 +20,8 @@
     </div>
 
     <div class="form-group">
-        <%= f.label :"password_confirmation" %><br>
-        <%= f.password_field :"password_confirmation",class:"form-control"%>
+        <%= f.label :password_confirmation %><br>
+        <%= f.password_field :password_confirmation,class:"form-control"%>
     </div>
 
     <div>
