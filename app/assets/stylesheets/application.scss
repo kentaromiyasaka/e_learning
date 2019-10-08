@@ -56,6 +56,24 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+  .bg-image2 {
+    /* The image used */
+    background-image: url("log_in_photo.jpg");
+  
+    /* Add the blur effect */
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+  
+    /* Full height */
+    min-height: 700px;
+    height: 100%;
+    width: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   .bg-text {
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */

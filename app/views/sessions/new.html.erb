@@ -1,0 +1,24 @@
+<div class="bg-image2"></div>
+
+<div class="bg-text">
+    <div class="col-sm-6 mx-auto">
+        <h1 class="text-center">Login</h1>
+
+        <%= form_for :session,url: sessions_path do |f|%>
+            <div class="form-group">
+            <%= f.label :email %><br>
+            <%= f.email_field :email,class:"form-control" %>
+            <%# 上記２つのemailは、labelをクリックしたらテキストボックスが光るというコネクションを示している %>
+            </div>
+            <div class="form-group">
+            <%= f.label :"password" %><br>
+            <%= f.password_field :"password",class:"form-control"%>
+            </div>
+
+            <div>
+                <%= f.submit "Log in", class:"btn btn-success col-12 mx-auto"%>
+            </div>
+        <% end %>
+
+    </div>
+</div>
