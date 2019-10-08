@@ -1,0 +1,17 @@
+<% if object.errors.any? %>
+    <div class="alert alert-danger">
+        <%# エラーが見つかった時に下記処理が実行されるコード %>
+        <p><%= pluralize(object.errors.count, "error")%></p>
+
+        <%# puluralizeはエラーメッセージの数に応じてerrorを単数か複数形(errors)にするか決めるコード%>
+
+        <ul>
+            <% object.errors.full_messages.each do |msg|%>
+            <%# validationに応じたエラーの数だけエラーメッセージをループするコード.エラーメッセージはrailsで決まっている。 %>
+                <li><%= msg %></li>
+            <% end %>
+
+        </ul>
+    </div>
+
+<% end %>
