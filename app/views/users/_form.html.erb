@@ -24,10 +24,13 @@
         <%= f.password_field :password_confirmation,class:"form-control"%>
     </div>
 
-    <div class="form-group">
-        <%= f.label :picture %><br>
-        <%= f.file_field :picture, accept: "image/jpeg, image/gif, image/png",class:"form-control"%>
-    </div>
+    <% if logged_in? %>
+        <div class="form-group">
+            <%= f.label :picture %><br>
+            <%= f.file_field :picture, accept: "image/jpeg, image/gif, image/png",class:"form-control"%>
+        </div>
+    <% end %>
+   
 
     <%# 画像アップロード %>
     <div>
