@@ -12,4 +12,7 @@ class User < ApplicationRecord
   validates :password,length:{ minimum:6 },allow_nil: true
   validates :name, presence: true
   validates :email, presence: true
+
+  mount_uploader :picture,PictureUploader
+
 end
