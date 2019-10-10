@@ -24,6 +24,12 @@
         <%= f.password_field :password_confirmation,class:"form-control"%>
     </div>
 
+    <div class="form-group">
+        <%= f.label :picture %><br>
+        <%= f.file_field :picture,class:"form-control"%>
+    </div>
+
+    <%# 画像アップロード %>
     <div>
         <%= f.submit btn_msg, class: 'btn btn-primary btn-block'%>
         <%# btn_msgはただの変数なので変更可能 => renderに続く%>
