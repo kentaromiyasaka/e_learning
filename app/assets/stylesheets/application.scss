@@ -1,10 +1,13 @@
 @import "bootstrap";
 
-  .jumbotron {
+.jumbotron {
   background-image: url("study_bg");
   background-size: cover;
   background-position: center 100%;
   margin-bottom: 0;
+}
+#jumbotron2 {
+  padding-bottom: 220px;
 }
 
 .carousel {
@@ -24,18 +27,18 @@
   z-index: 2;
 }
 .words{
-    position:  absolute;        /* 要素の配置方法を指定 */
-    padding:  20px;             /* 余白指定 */
-    left:  50px;                /* 左からの位置指定 */
-    top: 50px;                  /* 上からの位置指定 */
-    color:white;
+  position:  absolute;        /* 要素の配置方法を指定 */
+  padding:  20px;             /* 余白指定 */
+  left:  50px;                /* 左からの位置指定 */
+  top: 50px;                  /* 上からの位置指定 */
+  color:white;
 }
 .words1{
-    position:  absolute;        /* 要素の配置方法を指定 */
-    padding:  20px;             /* 余白指定 */
-    right:  50px;                /* 左からの位置指定 */
-    top: 40px;                  /* 上からの位置指定 */
-    color:black;
+  position:  absolute;        /* 要素の配置方法を指定 */
+  padding:  20px;             /* 余白指定 */
+  right:  50px;                /* 左からの位置指定 */
+  top: 40px;                  /* 上からの位置指定 */
+  color:black;
 }
 
 .bg-image {
