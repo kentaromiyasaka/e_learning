@@ -19,11 +19,11 @@ class UsersController < ApplicationController
 
   def update
     @user =User.find(params[:id])
-      if @user.update(users_params)
-          redirect_to current_user
-      else
-          render”edit”
-      end
+    if @user.update(users_params)
+      redirect_to current_user
+    else
+      render”edit”
+    end
   end
 
   def edit
