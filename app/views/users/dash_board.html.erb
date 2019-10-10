@@ -1,12 +1,12 @@
 <div class="bg-image" id="bg-image3"></div>
 
-<div class="bg-text" id="bg-text2">
+<div class="bg-text mt-5" id="bg-text2">
     <div class="row">
         <div class="col-md-4">
             <h1>Dash board</h1>
-            <div class="p-3 text-center">
-                image will come here
-            </div>
+            <% if current_user.picture? %>
+                <%=image_tag current_user.picture.url, class:"img-size rounded-circle"%>
+            <% end %>
             <h2 class="card-title text-center"><%= current_user.name %></h2>
             <div class="card-body">
                 <hr>
