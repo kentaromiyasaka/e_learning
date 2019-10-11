@@ -1,0 +1,19 @@
+<div class="container p-4">
+<p class="lead text-muted text-center">Administrater Categories</p>
+    <%= link_to "Create new Category","#",class:"btn btn-secondary text-center m-2" %>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Settings</th>
+            </tr>
+        </thead>
+        <tbody>
+        <%# categories will come here %>
+        </tbody>
+    </table>
+    <%= link_to "Back", admin_page_admin_static_page_path(current_user), class:"btn btn-light my-2" %>
+</div>
+
+
