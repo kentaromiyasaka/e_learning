@@ -1,0 +1,21 @@
+<div class="container p-4">
+<p class="lead text-muted text-center">Administrater Users</p>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Admin</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @users.each do |user| %>
+                <tr>
+                    <th scope="row"><%=user.name%></th>
+                    <td><%=user.email%></td>
+                    <td><%= link_to "Add", "#", class:"btn btn-secondary" %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
