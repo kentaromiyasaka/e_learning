@@ -1,0 +1,15 @@
+<div class="container p-4">
+    <h2 class="card-title text-center"><%= @category.title %></h2>
+    <h5 class="card-title text-center"><%= @category.description %></h5>
+    <%= link_to "New Word","#",class:"btn btn-secondary m-2 text-center" %>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Word</th>
+                <th scope="col">Answer</th>
+                <th scope="col">Setting</th>
+            </tr>
+        </thead>
+    </table>
+    <%= link_to "Back",admin_categories_path, class:"btn btn-light my-2" %>
+</div>
