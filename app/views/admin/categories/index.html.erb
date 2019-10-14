@@ -16,9 +16,8 @@
                     <td><%=category.description%></td>
                     <td><%= link_to "Edit",edit_admin_category_path(category), class:"" %>/<%= link_to "Remove",admin_category_path(category),method: :delete,data:{confirm:"Are you sure?"}%></td>
                 </tr>
-        </tbody>
             <% end %>
-            
+        </tbody>     
     </table>
     <%= will_paginate %>
     <%= link_to "Back", admin_page_admin_static_page_path(current_user), class:"btn btn-light my-2" %>
