@@ -12,7 +12,7 @@
         <tbody>
             <% @categories.each do |category| %>
                 <tr>
-                    <th scope="row"><%= link_to category.title, admin_category_path(category.id), class:"btn btn-light my-2" %></th>
+                    <th scope="row"><%= link_to category.title, admin_category_words_path(category,@word), class:"btn btn-light my-2" %></th>
                     <td><%=category.description%></td>
                     <td><%= link_to "Edit",edit_admin_category_path(category), class:"" %>/<%= link_to "Remove",admin_category_path(category),method: :delete,data:{confirm:"Are you sure?"}%></td>
                 </tr>

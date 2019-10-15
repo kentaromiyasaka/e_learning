@@ -11,6 +11,18 @@
                 <th scope="col">Setting</th>
             </tr>
         </thead>
+        <tbody>
+            <% @words.each do |word| %>
+                <tr>
+                    <td><%= word.content %></td>
+                    <td><%= word.correct_answer.content %></td>
+                    <td><%= link_to "Edit",edit_admin_category_word_path(@category,word), class:""%>/<%= link_to "Remove",admin_category_word_path(@category,word),method: :delete,data:{confirm:"Are you sure?"}%>
+                    </td> 
+                </tr>
+            <% end %>
+        </tbody>
     </table>
+     <%= will_paginate %>
+   
     <%= link_to "Back",admin_categories_path, class:"btn btn-light my-2" %>
 </div>
