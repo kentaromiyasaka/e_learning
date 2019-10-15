@@ -15,10 +15,27 @@ class Admin::WordsController < ApplicationController
       render "new"
     end
   end
-
+  
   def edit
     @category = Category.find(params[:category_id])
     @word = Word.find(params[:id])
+  end
+
+  def update
+    @category = Category.find(params[:category_id])
+    @word = Word.find(params[:id])
+      if @word.update(words_params)
+        redirect_to admin_category_words_url(@category)
+      else
+        render "edit"
+      end
+  end
+
+  def destroy
+    @category = Category.find(params[:category_id])
+    @word = Word.find(params[:id])
+    @word.destroy
+    redirect_to admin_category_words_url(@category)
   end
 
   def index
