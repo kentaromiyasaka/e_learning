@@ -4,17 +4,32 @@ class Admin::WordsController < ApplicationController
     @word = @category.words.new
     3.times { @word.choices.new }
     # 3回@wordのchoiceを繰り返します
-
   end
 
   def create
     @category = Category.find(params[:category_id])
     @word = @category.words.new(words_params)
     if @word.save
-      redirect_to admin_category_url(@category)
+      redirect_to admin_category_words_url(@category)
     else
       render "new"
     end
+  end
+
+  def edit
+    @category = Category.find(params[:category_id])
+    @word = Word.find(params[:id])
+  end
+
+  def index
+    @category = Category.find(params[:category_id])
+    @words = @category.words.paginate(page: params[:page], per_page: 5)
+    
+    # @category = Category.find(params[:category_id])
+    # @words = @category.words
+  end
+
+  def show
     
   end
 

@@ -8,14 +8,10 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.new
   end
 
-  def show
-    @category = Category.find(params[:id])
-  end
-
   def create
     @category = Category.new(categories_params)
     if @category.save
-      redirect_to admin_categories_url
+      redirect_to admin_category_words_url(@category)
     else
       render "new"
     end
@@ -24,7 +20,7 @@ class Admin::CategoriesController < ApplicationController
   def update
     @category = Category.find(params[:id])
       if @category.update(categories_params)
-        redirect_to admin_categories_url 
+        redirect_to admin_categories _url 
       else
         render "edit"
       end
