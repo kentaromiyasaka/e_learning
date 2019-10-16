@@ -1,5 +1,9 @@
 <h1 class="text-center">Lessons</h1>
+
 <div class="container">
+    <%= link_to "All","#", class:"" %>
+    <%= link_to "Learned","#", class:"" %>
+    <%= link_to "Not Learned","#", class:"" %>
     <div class="row text-center">
         <% @categories.each do |category| %>
             <div class="card-deck mb-3 text-center col-4">
@@ -11,7 +15,7 @@
                         <ul class="list-unstyled mt-3 mb-4">
                             <%= category.description %>
                         </ul>
-                        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Start Lesson</button>
+                        <%= link_to "Start Lesson",new_answer_path, class: 'btn btn-info' %>
                     </div>
                 </div>
             </div>
