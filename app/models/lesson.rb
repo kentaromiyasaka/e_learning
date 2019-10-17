@@ -1,7 +1,7 @@
 class Lesson < ApplicationRecord
-  belongs_to :user
-  belongs_to :category
-  has_many :answers
+  belongs_to :user, dependent: :destroy
+  belongs_to :category, dependent: :destroy
+  has_many :answers, dependent: :destroy
   has_many :words, through: :answers
 
 

@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :lessons
+  has_many :lessons, dependent: :destroy
   before_save {email.downcase!}
   # REGEX = Regular expression
   # To validate correct email structure
