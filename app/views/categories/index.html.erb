@@ -15,7 +15,7 @@
                         <ul class="list-unstyled mt-3 mb-4">
                             <%= category.description %>
                         </ul>
-                        <%= link_to "Start Lesson",new_answer_path, class: 'btn btn-info' %>
+                        <%= link_to "Start Lesson",lessons_path(category_id: category.id),method: :post,class: 'btn btn-info' %>
                     </div>
                 </div>
             </div>
