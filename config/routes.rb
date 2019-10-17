@@ -18,5 +18,7 @@ Rails.application.routes.draw do
     end
   end
   resources :categories
-  resources :answers
+  resources :lessons do
+    resources :answers
+  end
 end
