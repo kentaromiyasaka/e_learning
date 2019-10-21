@@ -1,25 +1,35 @@
-<h1 class="text-center">Lessons</h1>
-
-<div class="container">
-    <%= link_to "All","#", class:"" %>
-    <%= link_to "Learned","#", class:"" %>
-    <%= link_to "Not Learned","#", class:"" %>
-    <div class="row text-center">
-        <% @categories.each do |category| %>
-            <div class="card-deck mb-3 text-center col-4">
-                <div class="card mb-4 shadow-sm">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-normal"><%= category.title %></h4>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <%= category.description %>
-                        </ul>
-                        <%= link_to "Start Lesson",lessons_path(category_id: category.id),method: :post,class: 'btn btn-info' %>
+<div class="bg-image"id="bg-image_index"></div>
+<div class="bg-text" id="bg-text_index">
+    <h1 class="text-center">Lessons</h1>
+    <div class="container" id="container_index">
+        <div class="p-2 mx-4 text-left">
+            <%= link_to "All","#", class:"btn btn-secondary mx-2 px-4" %>
+            <%= link_to "Learned","#", class:"btn btn-secondary mx-2" %>
+            <%= link_to "Not Learned","#", class:"btn btn-secondary mx-2" %>
+        </div>
+        <div class="row">
+            <% @categories.each do |category| %>
+                <div class="card-deck mb-3 ml-1 text-center col-4 text-dark">
+                    <div class="card mb-4 shadow-sm"id="card_background">
+                        <div class="card-header">
+                            <h2 class="my-0 font-weight-normal"><%= category.title %></h2>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled mt-1 mb-1">
+                                <%= category.description %>
+                            </ul>
+                                <% if category.lessons.where(user_id: current_user, category_id: category).any? %>
+                                    <%= link_to "Resoult",lesson_path(id: category.id),class: 'btn btn-success' %>
+                                <% else %>
+                                    <%= link_to "Start Lesson",lessons_path(category_id: category.id),method: :post,class: 'btn btn-primary' %>
+                                <% end %>
+                        </div>
                     </div>
                 </div>
+            <% end %>
+            <div class="paginate col-md-6 offset-md-3">
+                <%= will_paginate %>
             </div>
-        <% end %>
-        <%= will_paginate %>
+        </div>
     </div>
 </div>

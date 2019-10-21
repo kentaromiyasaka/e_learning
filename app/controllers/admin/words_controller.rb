@@ -3,7 +3,7 @@ class Admin::WordsController < ApplicationController
     @category = Category.find(params[:category_id])
     @word = @category.words.new
     3.times { @word.choices.new }
-    # 3回@wordのchoiceを繰り返します
+                                                          # 3回@wordのchoiceを繰り返します
   end
 
   def create
@@ -42,8 +42,8 @@ class Admin::WordsController < ApplicationController
     @category = Category.find(params[:category_id])
     @words = @category.words.paginate(page: params[:page], per_page: 5)
     
-    # @category = Category.find(params[:category_id])
-    # @words = @category.words
+                                                          # @category = Category.find(params[:category_id])
+                                                          # @words = @category.words
   end
 
   def show

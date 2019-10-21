@@ -1,25 +1,30 @@
-<div class="bg-image"id="bg-image_edit"></div>
-<div class="bg-text">
-    <h1><%= @category.title %></h1>
-    <div class="col-sm-6 mx-auto">
-        <h1 class="text-center">Result</h1>
-        <div class="border-top p-3"></div>
-        <h1 class="text-center">3/5</h1>
-        <table class="ml-auto mr-auto text-white" border="1" bordercolor="white">
-            <thead>
-                <tr>
-                    <th  class="text-center p-2 text-white"><b>Word</b></th>
-                    <th  class="text-center p-2 text-white"><b>Answer</b></th>
-                    <th  class="text-center p-2 text-white"><b>Correct</b></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="p-1 text-white">false</td>
-                    <td class="p-1 text-white">false</td>
-                    <td class="p-1 text-white">true</td>
-                </tr>
-            </tbody>
-        </table>			
+<div class="bg-image"id="bg-image_index"></div>
+
+<div class="bg-text" id="bg-text_index">
+    <h1 class="text-center">Result</h1>
+    <div class="result m-2 p-3 border border-white">
+        <h2><%= @category.title %></h2>
+        <div class="col-sm-6 mx-auto">
+            <div class="border-top p-1"></div>
+            <h1 class="text-center"><%= @lesson.correct_answers %>/<%= @lesson.words.count %></h1>
+            <table class="ml-auto mr-auto text-white" border="1" bordercolor="white">
+                <thead>
+                    <tr>
+                        <th  class="text-center p-2 text-white"><b>Word</b></th>
+                        <th  class="text-center p-2 text-white"><b>Answer</b></th>
+                        <th  class="text-center p-2 text-white"><b>Correct</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @lesson.answers.each do |answer| %>
+                        <tr>
+                            <td class="p-1 text-white"><%= answer.word.content %></td>
+                            <td class="p-1 text-white"><%= answer.choice.content %></td>
+                            <td class="p-1 text-white"><%= answer.word.choices.find_by(is_correct: true).content %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>			
+        </div>
     </div>
 </div>
