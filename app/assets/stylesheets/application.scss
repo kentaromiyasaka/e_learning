@@ -59,6 +59,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  z-index: 1;
 }
 #bg-image2 {
   /* The image used */
@@ -71,6 +72,9 @@
 #bg-image_edit {
   background-image: url("edit.jpg");
 }
+#bg-image_index {
+  background-image: url("knowledge.jpg");
+}
 .bg-text {
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
@@ -78,7 +82,7 @@
   font-weight: bold;
   border: 3px solid #f1f1f1;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -97,6 +101,15 @@
   top: 35%;
 }
 
+#bg-text_index{
+  border: none;
+  top: 50%;
+}
+
+#edit_position{
+  top: 50%;
+}
+
 .img-size {
   width: 100px;
   height: 100px;
@@ -110,6 +123,13 @@
 .font1{
   font-family: 'Anton', sans-serif;
 }
-//     -webkit-box-shadow: 0px 0px 38px 0px rgba(0,0,0,0.75);
+
+#container_index{
+  box-sizing:content-box;
+}
+#card_background{
+  background: linear-gradient(#FFA17F, #00223E);
+}
+// -webkit-box-shadow: 0px 0px 38px 0px rgba(0,0,0,0.75);
 // -moz-box-shadow: 0px 0px 38px 0px rgba(0,0,0,0.75);
 // box-shadow: 0px 0px 38px 0px rgba(0,0,0,0.75);
