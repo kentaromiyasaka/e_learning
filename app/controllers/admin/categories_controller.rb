@@ -25,12 +25,12 @@ class Admin::CategoriesController < ApplicationController
         render "edit"
       end
   end
-# updateでは、editの要領で受け取った値を、updateで更新してしまう。
+                                                      # updateでは、editの要領で受け取った値を、updateで更新してしまう。
 
 
   def edit
     @category = Category.find(params[:id])
-    # 編集するデータを探してくる
+                                                      # 編集するデータを探してくる
   end
 
   def destroy
@@ -39,8 +39,8 @@ class Admin::CategoriesController < ApplicationController
     redirect_to admin_categories_url
   end
 
-  # edit.htmlで入力されて、fに代入されて@userあてに届いた値をparamsで選別、取得。それを元にデータを検索する。
-  # ruting的に、自動でupdateメソッドにも飛んでいるので、editで取得した値はupdateで処理される。
+                                                      # edit.htmlで入力されて、fに代入されて@userあてに届いた値をparamsで選別、取得。それを元にデータを検索する。
+                                                      # ruting的に、自動でupdateメソッドにも飛んでいるので、editで取得した値はupdateで処理される。
   private
   def categories_params
     params.require(:category).permit(:title,:description)
