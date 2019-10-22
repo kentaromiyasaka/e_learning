@@ -8,9 +8,8 @@ class AnswersController < ApplicationController
 
     if @lesson.next_word.nil?
       @lesson.update_attribute(:result, @lesson.correct_answers)
-      redirect_to @lesson
-      @lesson.create_activity(user: current_user)
-                                                          # 単語がゼロになったら、lesson show pageにリダイレクト
+      @lesson.create_activity(user: current_user)   
+      redirect_to @lesson                                                          # 単語がゼロになったら、lesson show pageにリダイレクト
     else
       @answer = @lesson.answers.new
                                                           # 単語がゼロじゃなかったら、もう一回newメソッドを繰り返し
