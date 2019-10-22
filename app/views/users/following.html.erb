@@ -1,0 +1,27 @@
+<div class="bg-image"id="bg-image_edit"></div>
+<div class="bg-text">
+    <div class="col-sm-6 mx-auto">
+        <h1 class="text-center">following</h1>
+    </div>
+    <div class="paginate text-center">
+    </div>
+    <div class="row">
+        <% @following.each do |following| %>
+            <div class="col-6">
+                <div class="media p-2">
+                    <div class="media-body p-1">
+                        <% if following.picture? %>
+                            <%=image_tag following.picture.url, class:"img-size rounded-circle"%>
+                        <% end %>
+                        <%= link_to following.name,user_path(following), class:"h3" %>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+
+
+     <div class="paginate text-center">
+        <%# <%= will_paginate %> 
+    </div>
+</div>
