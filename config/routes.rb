@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/login', to:'sessions#new'
   delete '/logout',to:'sessions#destroy'
-  resources :users
+  resources :users do
+    member do
+      get 'following', 'followers'
+    end
+  end
   resources :sessions
   resources :relationships,only:[:create,:destroy]
   namespace :admin do
