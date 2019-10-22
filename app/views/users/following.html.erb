@@ -6,7 +6,7 @@
     <div class="paginate text-center">
     </div>
     <div class="row">
-        <% @following.each do |following| %>
+        <% @users.each do |following| %>
             <div class="col-6">
                 <div class="media p-2">
                     <div class="media-body p-1">
@@ -22,6 +22,6 @@
 
 
      <div class="paginate text-center">
-        <%# <%= will_paginate %> 
+        <%= will_paginate %>
     </div>
 </div>
