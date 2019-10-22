@@ -14,4 +14,6 @@ class Lesson < ApplicationRecord
   def correct_answers
     choices.where(is_correct: true).count
   end
+
+  has_one :activity, as: :action, dependent: :destroy
 end
