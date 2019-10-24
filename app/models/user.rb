@@ -37,4 +37,5 @@ class User < ApplicationRecord
   def relationship(other_user)
     active_relationships.find_by(followed_id: other_user.id)
   end
+
 end
