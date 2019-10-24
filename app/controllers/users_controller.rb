@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @users = Activity.where("user_id = ? OR user_id IN (?)", @user.id, @user.following.ids).order(created_at: :desc).paginate(page: params[:page], per_page: 6)
   end
   
   def new

@@ -1,6 +1,6 @@
 <div class="bg-image" id="bg-image3"></div>
 
-<div class="bg-text mt-5" id="bg-text2">
+<div class="bg-text mt-5" id="bg-text3">
     <div class="row">
         <div class="col-md-4">
             <h1>Dash board</h1>
@@ -23,6 +23,31 @@
 
         <div class="col-md-8 text-center">
             <h1 m-2>All ACTIVITIES</h1>
+            <div class="activity_table">
+                <table class="text-left">
+                    <% @static_pages.each do |activity| %>
+                        <% if activity.action_type == "Relationship" %>
+                            <tr>
+                                <td class="p-2"><%= link_to activity.user.name,@user %></td>
+                                <td>followed</td>
+                                <td class="p-2"><%= link_to activity.action.followed.name, activity.action.followed %></td>
+                                <td><%= time_ago_in_words(activity.created_at) %></td>
+                            </tr>
+                        <% else %>
+                            <tr>
+                                <td class="p-2"><%= link_to activity.user.name,@user %></td>
+                                <td>learned</td>
+                                <td class="p-2"><%= activity.action.correct_answers %> of <%= activity.action.words.count %>in
+                                <%=link_to activity.action.category.title,activity.action %></td>
+                                <td><%= time_ago_in_words(activity.created_at) %></td>
+                            </tr> 
+                        <% end %>
+                    <% end %>
+                </table>
+                <div class="activity_table">
+                    <%= will_paginate %>
+                </div>
+            </div>
         </div>
     </div>
         
