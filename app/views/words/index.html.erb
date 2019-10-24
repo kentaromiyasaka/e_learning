@@ -1,0 +1,49 @@
+<div class="bg-image" id="bg-image3"></div>
+
+<div class="bg-text mt-5" id="bg-text3">
+    <div class="row">
+        <div class="col-md-4">
+            <% if current_user.picture? %>
+                <%=image_tag current_user.picture.url, class:"img-size rounded-circle"%>
+            <% end %>
+            <h2 class="card-title text-center"><%= current_user.name %></h2>
+            <div class="card-body">
+                <hr>
+            </div>
+        </div>
+        <div class="col-md-8 text-center">
+            <h2 m-2>Words learned</h2>
+            <div>
+                <h3 class="d-inline-block" >Category</h3>
+                <div class="btn-group d-inline-block">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Right-aligned menu
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <button class="dropdown-item" type="button">Action</button>
+                        <button class="dropdown-item" type="button">Another action</button>
+                        <button class="dropdown-item" type="button">Something else here</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity_table">
+                <table class="text-left">
+                    <tr>
+                        <th>Word</th>
+                        <th>Your answer</th>
+                        <th>Correct answer</th>
+                    </tr>
+                    <% @words.each do |word| %>
+                        <tr>
+                            <td> <%= word.content %></td>
+                            <td>answer</td>
+                            <td>Correct</td>
+                        </tr>
+                    <% end %>
+                </table>
+                <%= will_paginate %>
+            </div>
+        </div>
+    </div>
+</div>
