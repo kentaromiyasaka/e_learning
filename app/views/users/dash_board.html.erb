@@ -28,14 +28,18 @@
                     <% @static_pages.each do |activity| %>
                         <% if activity.action_type == "Relationship" %>
                             <tr>
-                                <td class="p-2"><%= link_to activity.user.name,@user %></td>
+                                <% if current_user ==  activity.user%>
+                                    <td class="p-2"><%= link_to "YOU",activity.user %></td>
+                                <% else %>
+                                    <td class="p-2"><%= link_to activity.user.name,activity.user %></td>
+                                <% end %>
                                 <td>followed</td>
                                 <td class="p-2"><%= link_to activity.action.followed.name, activity.action.followed %></td>
                                 <td><%= time_ago_in_words(activity.created_at) %></td>
                             </tr>
                         <% else %>
                             <tr>
-                                <td class="p-2"><%= link_to activity.user.name,@user %></td>
+                                <td class="p-2"><%= link_to activity.user.name,activity.user %></td>
                                 <td>learned</td>
                                 <td class="p-2"><%= activity.action.correct_answers %> of <%= activity.action.words.count %>in
                                 <%=link_to activity.action.category.title,activity.action %></td>

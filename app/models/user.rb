@@ -38,8 +38,4 @@ class User < ApplicationRecord
     active_relationships.find_by(followed_id: other_user.id)
   end
 
-  # def activity_feed
-  #   Activity.where()
-  # end
-
 end
