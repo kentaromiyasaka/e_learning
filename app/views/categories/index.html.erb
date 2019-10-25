@@ -3,9 +3,9 @@
     <h1 class="text-center">Lessons</h1>
     <div class="container" id="container_index">
         <div class="p-2 mx-4 text-left">
-            <%= link_to "All","#", class:"btn btn-secondary mx-2 px-4" %>
-            <%= link_to "Learned","#", class:"btn btn-secondary mx-2" %>
-            <%= link_to "Not Learned","#", class:"btn btn-secondary mx-2" %>
+            <%= link_to "All",categories_path, class:"btn btn-secondary mx-2 px-4" %>
+            <%= link_to "Learned",learned_path, class:"btn btn-secondary mx-2" %>
+            <%= link_to "Not Learned",not_learned_path, class:"btn btn-secondary mx-2" %>
         </div>
         <div class="row">
             <% @categories.each do |category| %>

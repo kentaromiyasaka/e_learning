@@ -1,0 +1,54 @@
+<div class="bg-image" id="bg-image3"></div>
+
+<div class="bg-text mt-5" id="bg-text3">
+    <div class="row">
+        <div class="col-md-4">
+            <% if current_user.picture? %>
+                <%=image_tag current_user.picture.url, class:"img-size rounded-circle"%>
+            <% end %>
+            <h2 class="card-title text-center"><%= current_user.name %></h2>
+        </div>
+        <div class="col-md-8 text-center">
+            <h2 m-2>Words learned</h2>
+            <div>
+                <h3 class="d-inline-block" >Category</h3>
+                <div class="dropdown d-inline-block">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <% if @category %>
+                            <%= @category.title %>
+                        <% else %>
+                            ALL
+                        <% end %>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <%= link_to "All", words_path, class:"dropdown-item" %>
+                        <% @categories.each do |category| %>
+                            <%= link_to category.title, words_path(category: category),class:"dropdown-item" %>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity_table">
+                <table class="text-left m-2">
+                    <tr class="h4">
+                        <th class="p-2">Word</th>
+                        <th class="p-2">Your answer</th>
+                        <th class="p-2">Correct answer</th>
+                    </tr>
+                    <% @words.each do |answer| %>
+                        <tr>
+                            <td class="p-1 text-white"><%= answer.word.content %></td>
+                            <td class="p-1 text-white"><%= answer.choice.content %></td>
+                            <td class="p-1 text-white"><%= answer.word.choices.find_by(is_correct: true).content %></td>
+                        </tr>
+                    <% end %>
+                </table>
+                <div class="activity_table">
+                    <%= will_paginate %>
+                </div>
+                <%= link_to "Back", root_path, class:"btn btn-light activity_table" %>
+            </div>
+        </div>
+    </div>
+</div>
