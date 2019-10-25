@@ -110,6 +110,20 @@
 .font1{
   font-family: 'Anton', sans-serif;
 }
-//     -webkit-box-shadow: 0px 0px 38px 0px rgba(0,0,0,0.75);
+
+#container_index{
+  box-sizing:content-box;
+}
+#card_background{
+  background: linear-gradient(#FFA17F, #00223E);
+}
+
+.activity_table{
+  margin-left: 22%
+}
+.paginate{
+
+}
+// -webkit-box-shadow: 0px 0px 38px 0px rgba(0,0,0,0.75);
 // -moz-box-shadow: 0px 0px 38px 0px rgba(0,0,0,0.75);
 // box-shadow: 0px 0px 38px 0px rgba(0,0,0,0.75);
