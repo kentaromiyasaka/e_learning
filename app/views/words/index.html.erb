@@ -7,42 +7,47 @@
                 <%=image_tag current_user.picture.url, class:"img-size rounded-circle"%>
             <% end %>
             <h2 class="card-title text-center"><%= current_user.name %></h2>
-            <div class="card-body">
-                <hr>
-            </div>
         </div>
         <div class="col-md-8 text-center">
             <h2 m-2>Words learned</h2>
             <div>
                 <h3 class="d-inline-block" >Category</h3>
-                <div class="btn-group d-inline-block">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Right-aligned menu
+                <div class="dropdown d-inline-block">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <% if @category %>
+                            <%= @category.title %>
+                        <% else %>
+                            ALL
+                        <% end %>
                     </button>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <button class="dropdown-item" type="button">Action</button>
-                        <button class="dropdown-item" type="button">Another action</button>
-                        <button class="dropdown-item" type="button">Something else here</button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <%= link_to "All", words_path, class:"dropdown-item" %>
+                        <% @categories.each do |category| %>
+                            <%= link_to category.title, words_path(category: category),class:"dropdown-item" %>
+                        <% end %>
                     </div>
                 </div>
             </div>
 
             <div class="activity_table">
-                <table class="text-left">
-                    <tr>
-                        <th>Word</th>
-                        <th>Your answer</th>
-                        <th>Correct answer</th>
+                <table class="text-left m-2">
+                    <tr class="h4">
+                        <th class="p-2">Word</th>
+                        <th class="p-2">Your answer</th>
+                        <th class="p-2">Correct answer</th>
                     </tr>
-                    <% @words.each do |word| %>
+                    <% @words.each do |answer| %>
                         <tr>
-                            <td> <%= word.content %></td>
-                            <td>answer</td>
-                            <td>Correct</td>
+                            <td class="p-1 text-white"><%= answer.word.content %></td>
+                            <td class="p-1 text-white"><%= answer.choice.content %></td>
+                            <td class="p-1 text-white"><%= answer.word.choices.find_by(is_correct: true).content %></td>
                         </tr>
                     <% end %>
                 </table>
-                <%= will_paginate %>
+                <div class="activity_table">
+                    <%= will_paginate %>
+                </div>
+                <%= link_to "Back", root_path, class:"btn btn-light activity_table" %>
             </div>
         </div>
     </div>
