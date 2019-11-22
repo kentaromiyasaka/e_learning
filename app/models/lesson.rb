@@ -4,7 +4,11 @@ class Lesson < ApplicationRecord
   has_many :answers, dependent: :destroy
   has_many :words, through: :answers
   has_many :choices, through: :answers
+  # has_one :activity, as: :action, dependent: :destroy
   has_one :activity, as: :action, dependent: :destroy
+  :dependent => "destroy"
+  ["activity", "as" => "action" ,"dependent" => "destroy"]
+  
 
   def next_word
     (category.words - words).first
